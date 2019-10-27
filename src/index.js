@@ -1,8 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import LoginPage from './LoginPage';
-import MainPage from './MainPage';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import LoginPage from "./LoginPage";
+import MainPage from "./MainPage";
+import UserContext from "./UserContext";
+import "./index.css";
 
 class Root extends React.Component {
   state = {
@@ -19,14 +20,13 @@ class Root extends React.Component {
 
   render() {
     return this.state.currentUser ? (
-      <MainPage
-        currentUser={this.state.currentUser}
-        onLogout={this.handleLogout}
-      />
+      <UserContext.Provider value={this.state.currentUser}>
+        <MainPage onLogout={this.handleLogout} />
+      </UserContext.Provider>
     ) : (
       <LoginPage onLogin={this.handleLogin} />
     );
   }
 }
 
-ReactDOM.render(<Root />, document.querySelector('#root'));
+ReactDOM.render(<Root />, document.querySelector("#root"));

@@ -1,11 +1,11 @@
-import React from 'react';
-import Header from './Header';
-import MessageList from './MessageList';
+import React from "react";
+import Header from "./Header";
+import MessageList from "./MessageList";
 
-const MainPage = ({ currentUser, onLogout }) => (
+const MainPage = ({ onLogout }) => (
   <main>
-    <Header currentUser={currentUser} onLogout={onLogout} />
-    <MessageList currentUser={currentUser} />
+    <Header onLogout={onLogout} />
+    <MessageList />
   </main>
 );
 
