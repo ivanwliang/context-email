@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import LoginPage from "./LoginPage";
 import MainPage from "./MainPage";
 import { UserProvider, UserConsumer } from "./UserContext";
-import { EmailProvider, EmailConsumer } from "./EmailContext";
+import { EmailProvider } from "./EmailContext";
 import "./index.css";
 
 const Root = () => {
