@@ -17,7 +17,7 @@ class EmailProvider extends React.Component {
     fetchEmails()
       .then(emails => this.setState({ loading: false, emails }))
       .catch(error => this.setState({ loading: false, error }));
-    this.refreshInterval = setInterval(this.refresh, 5000);
+    this.refreshInterval = setInterval(this.refresh, 10000);
   }
 
   componentWillUnmount() {
